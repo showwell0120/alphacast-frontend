@@ -1,10 +1,10 @@
 # alphacast-frontend
 ## Project Infrastructure
-- [ ] Scaffold project template - `vite`
-- [ ] Coding style - `eslint` + `prettier`
-- [ ] Git hooks - `husky` + `lint-staged` + `commitlint`
+- [x] Scaffold project template - `vite` (React + TypeScript)
+- [ ] Unify Coding style - `eslint` + `prettier`
+- [ ] Add Git hooks - `husky` + `lint-staged` + `commitlint`
 - [ ] Componentize SVG - setup `svgr` in `vite.config.ts`
-- [ ] Custom types detection - setup `typeRoots` in `tsconfig.json`
+- [ ] Add Custom types detection - setup `typeRoots` in `tsconfig.json`
 - [ ] Mock API - `MSW`
 - [ ] Unit test - `jest` + `@testing-library`
 - [ ] Component development - `storybook`
