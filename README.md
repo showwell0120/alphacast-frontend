@@ -5,9 +5,9 @@
 - [x] Scaffold project template - `vite` (React + TypeScript)
 - [x] Unify Coding style - `eslint` + `prettier`
 - [x] Add Git hooks - `husky` + `lint-staged` + `commitlint`
-- [ ] Setup default port - `vite.config.ts`
-- [ ] Componentize SVG - setup `svgr` in `vite.config.ts`
-- [ ] Add Custom types detection - setup `typeRoots` in `tsconfig.json`
+- [x] Setup default port - `vite.config.ts`
+- [x] Componentize SVG - setup `svgr` in `vite.config.ts`
+- [x] Add Custom types detection - setup `typeRoots` in `tsconfig.json`
 - [ ] Mock API - `MSW`
 - [ ] Unit test - `jest` + `@testing-library`
 - [x] Component development - `storybook`
