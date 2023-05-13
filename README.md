@@ -8,7 +8,7 @@
 - [x] Setup default port - `vite.config.ts`
 - [x] Componentize SVG - setup `svgr` in `vite.config.ts`
 - [x] Add Custom types detection - setup `typeRoots` in `tsconfig.json`
-- [ ] Mock API - `MSW`
+- [x] Mock API - `MSW`
 - [ ] Unit test - `jest` + `@testing-library`
 - [x] Component development - `storybook`
 
