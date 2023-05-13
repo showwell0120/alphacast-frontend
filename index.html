@@ -2,12 +2,23 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>ALPHA Cast</title>
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- https://developer.spotify.com/documentation/embeds/tutorials/using-the-iframe-api -->
+    <script>
+      window.onSpotifyIframeApiReady = IFrameAPI => {
+        window.IFrameAPI = IFrameAPI;
+      };
+    </script>
+    <script
+      src="https://open.spotify.com/embed-podcast/iframe-api/v1"
+      async
+    ></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
