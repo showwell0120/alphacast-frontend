@@ -1,8 +1,10 @@
 # alphacast-frontend
+
 ## Project Infrastructure
+
 - [x] Scaffold project template - `vite` (React + TypeScript)
-- [ ] Unify Coding style - `eslint` + `prettier`
-- [ ] Add Git hooks - `husky` + `lint-staged` + `commitlint`
+- [x] Unify Coding style - `eslint` + `prettier`
+- [x] Add Git hooks - `husky` + `lint-staged` + `commitlint`
 - [ ] Setup default port - `vite.config.ts`
 - [ ] Componentize SVG - setup `svgr` in `vite.config.ts`
 - [ ] Add Custom types detection - setup `typeRoots` in `tsconfig.json`
@@ -11,6 +13,7 @@
 - [x] Component development - `storybook`
 
 ## Code tech stacks
+
 - [ ] Routing - `react-router-dom`
 - [ ] Manage server state - `@tantack/react-query`
 - [ ] Http request - `axios`
