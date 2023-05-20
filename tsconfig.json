@@ -18,8 +18,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-
-    "types": ["jest", "node", "./src/types"],
+    "typeRoots": ["node_modules/@types", "./src/types"],
     "esModuleInterop": true
   },
   "include": ["src"],

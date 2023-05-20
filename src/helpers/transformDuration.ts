@@ -1,3 +1,4 @@
+// 轉換播放時間的單位顯示
 export default function transformDuration(durationInMs: number) {
   const durationInSeconds = Math.round(durationInMs / 1000);
   const hours = Math.floor(durationInSeconds / 3600);

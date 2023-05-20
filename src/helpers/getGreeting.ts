@@ -1,3 +1,4 @@
+// 根據現在時間顯示問候語
 export default function getGreeting() {
   const time = new Date().getHours();
 

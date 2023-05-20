@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
 
-if (import.meta.env.DEV && import.meta.env.MODE === 'dev-mock-api') {
+if (process.env.DEV && process.env.MODE === 'dev-mock-api') {
   const { worker } = await import('./mocks/browser');
   worker.start();
 }

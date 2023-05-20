@@ -9,7 +9,7 @@
 - [x] Componentize SVG - setup `svgr` in `vite.config.ts`
 - [x] Add Custom types detection - setup `typeRoots` in `tsconfig.json`
 - [x] Mock API - `MSW`
-- [ ] Unit test - `jest` + `@testing-library`
+- [x] Unit test - `jest` + `@testing-library`
 - [x] Component development - `storybook`
 
 ## Code tech stacks
@@ -18,6 +18,3 @@
 - [ ] Manage server state - `@tantack/react-query`
 - [ ] Http request - `axios`
 - [ ] Design library - `bootstrap` + `react-bootstrap`
-- [ ] Move public files
-- [ ] Organize source codes
-- [ ] Organize global styles
