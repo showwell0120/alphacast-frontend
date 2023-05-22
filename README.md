@@ -16,5 +16,5 @@
 
 - [ ] Routing - `react-router-dom`
 - [ ] Manage server state - `@tantack/react-query`
-- [ ] Http request - `axios`
+- [x] Http request - `axios`
 - [ ] Design library - `bootstrap` + `react-bootstrap`
