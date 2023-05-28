@@ -12,18 +12,18 @@ import {
   splitCategoryName,
 } from '../../../helpers/categoryName';
 import { shouldFallback } from '../../../helpers/fallback';
-import { CategoryNameEditor } from '../../category-name-editor';
+import { EditCategoryName } from '../../edit-category-name';
 import { Modal } from '../modal';
 import styles from './styles.module.scss';
 
-export interface CategoryNameEditorModalProps {
+export interface EditCategoryNameModalProps {
   title: string;
   categoryName: string;
   onSubmit: (success: boolean) => void;
   id?: string;
 }
 
-export function CategoryNameEditorModal(props: CategoryNameEditorModalProps) {
+export function EditCategoryNameModal(props: EditCategoryNameModalProps) {
   const [categoryName, setCategoryName] = useState<CategoryName>(
     splitCategoryName(props.categoryName)
   );
@@ -104,7 +104,7 @@ export function CategoryNameEditorModal(props: CategoryNameEditorModalProps) {
             <span className="visually-hidden">Loading...</span>
           </Spinner>
         ) : (
-          <CategoryNameEditor
+          <EditCategoryName
             categoryName={categoryName}
             onChange={handleChange}
           />

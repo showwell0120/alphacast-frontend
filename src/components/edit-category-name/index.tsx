@@ -4,12 +4,12 @@ import { ChangeEvent, useState } from 'react';
 
 import styles from './styles.module.scss';
 
-export interface CategoryNameEditorProps {
+export interface EditCategoryNameProps {
   categoryName: CategoryName;
   onChange: (value: string, field: keyof CategoryName) => void;
 }
 
-export function CategoryNameEditor(props: CategoryNameEditorProps) {
+export function EditCategoryName(props: EditCategoryNameProps) {
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
 
   const handleEmojiChange = (emojiData: EmojiClickData) => {

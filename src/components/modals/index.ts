@@ -1,1 +1,1 @@
-export * from './category-name-editor';
+export * from './edit-category-name';

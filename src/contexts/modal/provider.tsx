@@ -2,7 +2,7 @@
 import { PropsWithChildren, useState } from 'react';
 
 import { ModalContext, ModalStore, initialStore } from '.';
-import { CategoryNameEditorModal } from '../../components/modals';
+import { EditCategoryNameModal } from '../../components/modals';
 
 const modalTypes = {
   CategoryNameEditor: Symbol('CategoryNameEditor'),
@@ -12,7 +12,7 @@ const modalTypes = {
 };
 
 const modalComponents = {
-  [modalTypes.CategoryNameEditor]: CategoryNameEditorModal,
+  [modalTypes.CategoryNameEditor]: EditCategoryNameModal,
 };
 
 export const ModalProvider = (props: PropsWithChildren) => {
