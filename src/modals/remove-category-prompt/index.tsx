@@ -2,9 +2,9 @@ import { useMutation } from '@tanstack/react-query';
 import { Emoji } from 'emoji-picker-react';
 import Spinner from 'react-bootstrap/Spinner';
 
-import { deleteCategory } from '../../../apis/server';
-import { useCategoryContext, useModalContext } from '../../../contexts';
-import { splitCategoryName } from '../../../helpers/categoryName';
+import { deleteCategory } from '../../apis/server';
+import { useCategoryContext, useModalContext } from '../../contexts';
+import { splitCategoryName } from '../../helpers/categoryName';
 import { Modal } from '../modal';
 import styles from './styles.module.scss';
 

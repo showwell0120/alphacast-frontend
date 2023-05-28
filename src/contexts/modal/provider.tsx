@@ -2,10 +2,7 @@
 import { PropsWithChildren, useState } from 'react';
 
 import { ModalContext, ModalStore, initialStore } from '.';
-import {
-  EditCategoryNameModal,
-  RemoveCategoryPrompt,
-} from '../../components/modals';
+import { EditCategoryNameModal, RemoveCategoryPrompt } from '../../modals';
 
 const modalTypes = {
   EditCategoryName: Symbol('EditCategoryName'),

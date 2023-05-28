@@ -4,15 +4,15 @@ import { useState } from 'react';
 import Spinner from 'react-bootstrap/Spinner';
 import { toast } from 'react-toastify';
 
-import { createCategory, updateCategory } from '../../../apis/server';
-import { useCategoryContext } from '../../../contexts';
-import { useModalContext } from '../../../contexts/modal';
+import { createCategory, updateCategory } from '../../apis/server';
+import { EditCategoryName } from '../../components/edit-category-name';
+import { useCategoryContext } from '../../contexts';
+import { useModalContext } from '../../contexts/modal';
 import {
   mergeCategoryName,
   splitCategoryName,
-} from '../../../helpers/categoryName';
-import { shouldFallback } from '../../../helpers/fallback';
-import { EditCategoryName } from '../../edit-category-name';
+} from '../../helpers/categoryName';
+import { shouldFallback } from '../../helpers/fallback';
 import { Modal } from '../modal';
 import styles from './styles.module.scss';
 
