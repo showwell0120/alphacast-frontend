@@ -7,7 +7,7 @@ import {
 import { AxiosError } from 'axios';
 import { ToastContainer } from 'react-toastify';
 
-import { UserProvider } from './contexts';
+import { CategoryProvider, UserProvider } from './contexts';
 
 // Create a client
 const queryClient = new QueryClient({
@@ -29,7 +29,9 @@ function App() {
   return (
     <>
       <QueryClientProvider client={queryClient}>
-        <UserProvider></UserProvider>
+        <UserProvider>
+          <CategoryProvider></CategoryProvider>
+        </UserProvider>
       </QueryClientProvider>
       <ToastContainer
         position="bottom-right"

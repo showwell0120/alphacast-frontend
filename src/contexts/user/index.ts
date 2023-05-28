@@ -20,4 +20,4 @@ export const UserContext = createContext<UserContextProps>({
 
 export const useUserContext = () => useContext(UserContext);
 
-export { UserProvider } from './user-provider';
+export { UserProvider } from './provider';
