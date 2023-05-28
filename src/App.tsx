@@ -9,6 +9,7 @@ import { ToastContainer } from 'react-toastify';
 
 import { CategoryProvider, UserProvider } from './contexts';
 import { FavoriteProvider } from './contexts/favorite/provider';
+import { ModalProvider } from './contexts/modal/provider';
 import { PlayerProvider } from './contexts/player/provider';
 
 // Create a client
@@ -34,7 +35,9 @@ function App() {
         <UserProvider>
           <CategoryProvider>
             <FavoriteProvider>
-              <PlayerProvider></PlayerProvider>
+              <PlayerProvider>
+                <ModalProvider></ModalProvider>
+              </PlayerProvider>
             </FavoriteProvider>
           </CategoryProvider>
         </UserProvider>
