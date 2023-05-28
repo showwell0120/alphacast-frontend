@@ -8,19 +8,21 @@ import {
   EditCategoryNameModal,
   RemoveCategoryPrompt,
   SearchShowModal,
+  ShowModal,
 } from '../../modals';
 
 export const modalTypes = {
   EditCategoryName: Symbol('EditCategoryName'),
   RemoveCategoryPrompt: Symbol('RemoveCategoryPrompt'),
   SearchShow: Symbol('SearchShow'),
-  EpisodesOfShow: Symbol('EpisodesOfShow'),
+  Show: Symbol('Show'),
 };
 
 const modalComponents = {
   [modalTypes.EditCategoryName]: EditCategoryNameModal,
   [modalTypes.RemoveCategoryPrompt]: RemoveCategoryPrompt,
   [modalTypes.SearchShow]: SearchShowModal,
+  [modalTypes.Show]: ShowModal,
 };
 
 export const ModalProvider = (props: PropsWithChildren) => {

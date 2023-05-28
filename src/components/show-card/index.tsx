@@ -30,7 +30,7 @@ export function ShowCard({
   const { showModal } = useModalContext();
 
   const handleOpenModal = () => {
-    showModal(modalTypes.EpisodesOfShow, {
+    showModal(modalTypes.Show, {
       publisher,
       name,
       id,
