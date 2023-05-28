@@ -1,0 +1,27 @@
+.container {
+  height: 50vh;
+  overflow: scroll;
+  padding: 1rem;
+}
+
+.spinner {
+  position: absolute;
+  top: 45%;
+  right: 50%;
+}
+
+.search-title {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  color: #111111;
+  font-weight: 700;
+}
+
+.shows-wrapper {
+  padding: 1rem 0.5rem;
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  align-items: start;
+  flex-wrap: wrap;
+}

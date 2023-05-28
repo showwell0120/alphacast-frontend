@@ -1,19 +1,26 @@
+/* eslint-disable react-refresh/only-export-components */
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { PropsWithChildren, useState } from 'react';
 
 import { ModalContext, ModalStore, initialStore } from '.';
-import { EditCategoryNameModal, RemoveCategoryPrompt } from '../../modals';
+import {
+  EditCategoryNameModal,
+  RemoveCategoryPrompt,
+  SearchShowModal,
+} from '../../modals';
 
-const modalTypes = {
+export const modalTypes = {
   EditCategoryName: Symbol('EditCategoryName'),
   RemoveCategoryPrompt: Symbol('RemoveCategoryPrompt'),
-  ShowFinder: Symbol('ShowFinder'),
+  SearchShow: Symbol('SearchShow'),
   EpisodesOfShow: Symbol('EpisodesOfShow'),
 };
 
 const modalComponents = {
   [modalTypes.EditCategoryName]: EditCategoryNameModal,
   [modalTypes.RemoveCategoryPrompt]: RemoveCategoryPrompt,
+  [modalTypes.SearchShow]: SearchShowModal,
 };
 
 export const ModalProvider = (props: PropsWithChildren) => {

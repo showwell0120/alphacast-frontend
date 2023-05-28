@@ -91,5 +91,3 @@ export function RemoveCategoryPrompt({
     </Modal>
   );
 }
-
-export default RemoveCategoryPrompt;
