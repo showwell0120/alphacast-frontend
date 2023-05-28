@@ -108,4 +108,11 @@ declare namespace Spotify {
   interface GetEpisodesResult {
     episodes: Array<Episode & { show: Show }>;
   }
+
+  interface EmbedControllerEvents {
+    data: {
+      isPaused: boolean;
+      isBuffering: boolean;
+    };
+  }
 }

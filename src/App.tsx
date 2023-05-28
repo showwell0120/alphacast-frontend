@@ -9,6 +9,7 @@ import { ToastContainer } from 'react-toastify';
 
 import { CategoryProvider, UserProvider } from './contexts';
 import { FavoriteProvider } from './contexts/favorite/provider';
+import { PlayerProvider } from './contexts/player/provider';
 
 // Create a client
 const queryClient = new QueryClient({
@@ -32,7 +33,9 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <UserProvider>
           <CategoryProvider>
-            <FavoriteProvider></FavoriteProvider>
+            <FavoriteProvider>
+              <PlayerProvider></PlayerProvider>
+            </FavoriteProvider>
           </CategoryProvider>
         </UserProvider>
       </QueryClientProvider>
