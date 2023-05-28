@@ -1,0 +1,30 @@
+.sidenav-container {
+  height: 100%;
+  width: 260px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f6f7f8;
+  overflow-x: hidden;
+  padding: 2.5rem 2rem;
+  .divider {
+    height: 1px;
+    background: #e2e8f0;
+    margin-top: 2.5rem;
+  }
+}
+
+.topbar-container {
+  display: flex;
+  justify-content: space-between;
+  .greeting {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+}
+
+.container {
+  .content {
+    padding: 2.5rem 3.75rem 2.5rem calc(260px + 1.5rem);
+  }
+}
