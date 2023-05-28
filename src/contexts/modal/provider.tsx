@@ -2,17 +2,21 @@
 import { PropsWithChildren, useState } from 'react';
 
 import { ModalContext, ModalStore, initialStore } from '.';
-import { EditCategoryNameModal } from '../../components/modals';
+import {
+  EditCategoryNameModal,
+  RemoveCategoryPrompt,
+} from '../../components/modals';
 
 const modalTypes = {
-  CategoryNameEditor: Symbol('CategoryNameEditor'),
-  CategoryRemovePrompt: Symbol('CategoryRemovePrompt'),
+  EditCategoryName: Symbol('EditCategoryName'),
+  RemoveCategoryPrompt: Symbol('RemoveCategoryPrompt'),
   ShowFinder: Symbol('ShowFinder'),
   EpisodesOfShow: Symbol('EpisodesOfShow'),
 };
 
 const modalComponents = {
-  [modalTypes.CategoryNameEditor]: EditCategoryNameModal,
+  [modalTypes.EditCategoryName]: EditCategoryNameModal,
+  [modalTypes.RemoveCategoryPrompt]: RemoveCategoryPrompt,
 };
 
 export const ModalProvider = (props: PropsWithChildren) => {
