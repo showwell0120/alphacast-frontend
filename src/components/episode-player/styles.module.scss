@@ -1,0 +1,40 @@
+.container {
+  box-shadow: 16px 16px 40px rgba(199, 199, 199, 0.24);
+  border-radius: 1rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  padding-bottom: 0.5rem;
+  background-color: #ffffff;
+}
+
+.header {
+  font-size: 1.5rem;
+  color: #1a202c;
+  display: flex;
+  justify-content: space-between;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: #e2e8f0;
+  margin: 1rem 0;
+}
+
+.description {
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #718096;
+  max-height: 75px;
+  overflow: scroll;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-weight: 700;
+  font-size: 0.875rem;
+  color: #111111;
+  margin-bottom: 0.5rem;
+  max-height: 85px;
+  overflow: scroll;
+}
