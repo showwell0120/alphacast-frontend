@@ -7,6 +7,8 @@ import {
 import { AxiosError } from 'axios';
 import { ToastContainer } from 'react-toastify';
 
+import { UserProvider } from './contexts';
+
 // Create a client
 const queryClient = new QueryClient({
   mutationCache: new MutationCache({
@@ -26,7 +28,9 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <>
-      <QueryClientProvider client={queryClient}></QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        <UserProvider></UserProvider>
+      </QueryClientProvider>
       <ToastContainer
         position="bottom-right"
         autoClose={5000}

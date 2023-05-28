@@ -4,7 +4,7 @@ import { StrictMode } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
-import App from './app/App';
+import App from './App';
 import './main.scss';
 
 if (process.env.DEV && process.env.MODE === 'dev-mock-api') {
