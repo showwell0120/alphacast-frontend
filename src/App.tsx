@@ -8,6 +8,7 @@ import { AxiosError } from 'axios';
 import { ToastContainer } from 'react-toastify';
 
 import { CategoryProvider, UserProvider } from './contexts';
+import { FavoriteProvider } from './contexts/favorite/provider';
 
 // Create a client
 const queryClient = new QueryClient({
@@ -30,7 +31,9 @@ function App() {
     <>
       <QueryClientProvider client={queryClient}>
         <UserProvider>
-          <CategoryProvider></CategoryProvider>
+          <CategoryProvider>
+            <FavoriteProvider></FavoriteProvider>
+          </CategoryProvider>
         </UserProvider>
       </QueryClientProvider>
       <ToastContainer
