@@ -5,7 +5,7 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
-import { Route, Routes } from 'react-router-dom';
+import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
 import {
@@ -14,8 +14,9 @@ import {
   ModalProvider,
   PlayerProvider,
   UserProvider,
+  useUserContext,
 } from './contexts';
-import { Callback } from './pages';
+import { Callback, Login } from './pages';
 
 // Create a client
 const queryClient = new QueryClient({
@@ -33,6 +34,16 @@ const queryClient = new QueryClient({
   }),
 });
 
+function ProtectedRoute({ redirectPath = '/' }) {
+  const { user, spotifyTokenInfo } = useUserContext();
+
+  if (!user && !spotifyTokenInfo) {
+    return <Navigate to={redirectPath} replace />;
+  }
+
+  return <Outlet />;
+}
+
 function App() {
   return (
     <>
@@ -44,6 +55,8 @@ function App() {
                 <ModalProvider>
                   <Routes>
                     <Route path="/callback" element={<Callback />} />
+                    <Route path="/" element={<Login />} />
+                    <Route element={<ProtectedRoute />}></Route>
                   </Routes>
                 </ModalProvider>
               </PlayerProvider>
