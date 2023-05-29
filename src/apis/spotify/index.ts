@@ -49,10 +49,10 @@ export async function searchShows({
  * @see https://developer.spotify.com/documentation/web-api/reference/get-multiple-shows
  */
 export async function getShows({
-  ids,
+  ids = '',
   country = 'TW',
 }: {
-  ids: string;
+  ids?: string;
   country?: string;
 }): Promise<Spotify.GetShowResult> {
   const response = await axiosInstance.get(

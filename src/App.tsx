@@ -16,7 +16,7 @@ import {
   UserProvider,
   useUserContext,
 } from './contexts';
-import { Callback, Login } from './pages';
+import { Callback, Login, Main } from './pages';
 
 // Create a client
 const queryClient = new QueryClient({
@@ -56,7 +56,9 @@ function App() {
                   <Routes>
                     <Route path="/callback" element={<Callback />} />
                     <Route path="/" element={<Login />} />
-                    <Route element={<ProtectedRoute />}></Route>
+                    <Route element={<ProtectedRoute />}>
+                      <Route element={<Main />} path="/main" />
+                    </Route>
                   </Routes>
                 </ModalProvider>
               </PlayerProvider>
