@@ -22,6 +22,11 @@ import { Callback, Favorites, Login, Main } from './pages';
 
 // Create a client
 const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false, // default: true
+    },
+  },
   mutationCache: new MutationCache({
     onError: error => {
       const response = error as AxiosError;

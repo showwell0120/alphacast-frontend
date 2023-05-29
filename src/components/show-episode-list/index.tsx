@@ -7,7 +7,6 @@ import styles from './styles.module.scss';
 
 export function ShowEpisodeList(props: { id: string }) {
   // infinite scrolling
-  // FIXME: run twice
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage, isLoading } =
     useInfiniteQuery(
       ['getShowEpisodes', props.id],
@@ -27,8 +26,8 @@ export function ShowEpisodeList(props: { id: string }) {
 
   const handleScroll = (event: React.UIEvent<HTMLDivElement>) => {
     const { scrollTop, clientHeight, scrollHeight } = event.currentTarget;
-    if (scrollTop + clientHeight === scrollHeight) {
-      if (!isLoading && hasNextPage) {
+    if (Math.floor(scrollTop) + clientHeight === scrollHeight - 1) {
+      if (!isLoading && !isFetchingNextPage && hasNextPage) {
         console.log('Scrolled to bottom!');
         fetchNextPage();
       }
