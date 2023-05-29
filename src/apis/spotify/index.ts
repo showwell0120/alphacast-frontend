@@ -83,10 +83,10 @@ export async function getShowEpisodes({
  * @see https://developer.spotify.com/documentation/web-api/reference/get-multiple-episodes
  */
 export async function getEpisodes({
-  ids,
+  ids = '',
   country = 'TW',
 }: {
-  ids: string;
+  ids?: string;
   country?: string;
 }): Promise<Spotify.GetEpisodesResult> {
   const response = await axiosInstance.get(
