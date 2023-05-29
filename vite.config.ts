@@ -15,6 +15,6 @@ export default defineConfig({
     EnvironmentPlugin('all'),
   ],
   server: {
-    port: 3000,
+    port: 4200,
   },
 });

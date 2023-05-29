@@ -5,9 +5,11 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
+import { ErrorBoundary } from 'react-error-boundary';
 import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
+import { Fallback } from './components/fallback';
 import {
   CategoryProvider,
   FavoriteProvider,
@@ -46,7 +48,7 @@ function ProtectedRoute({ redirectPath = '/' }) {
 
 function App() {
   return (
-    <>
+    <ErrorBoundary fallbackRender={Fallback}>
       <QueryClientProvider client={queryClient}>
         <UserProvider>
           <CategoryProvider>
@@ -79,7 +81,7 @@ function App() {
         pauseOnHover
         theme="light"
       />
-    </>
+    </ErrorBoundary>
   );
 }
 
