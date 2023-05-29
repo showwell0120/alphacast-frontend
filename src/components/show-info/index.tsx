@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 
 import { deleteShow } from '../../apis/server';
 import { shouldFallback } from '../../helpers/fallback';
+import { Image } from '../image';
 import styles from './styles.module.scss';
 
 export interface ShowInfoProps
@@ -49,7 +50,7 @@ export function ShowInfo({
   return (
     <div className={styles['show-info']}>
       <div className={styles['cover']}>
-        <img src={images?.[0].url} alt={name} />
+        <Image src={images?.[0]?.url ?? ''} alt={name} />
       </div>
       <div className={styles['texts']}>
         <div className={styles['name']}>{name}</div>

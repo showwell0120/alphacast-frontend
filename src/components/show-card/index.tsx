@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 
 import { useModalContext } from '../../contexts';
 import { modalTypes } from '../../contexts/modal/provider';
+import { Image } from '../image';
 import styles from './styles.module.scss';
 
 export interface ShowCardProps
@@ -53,7 +54,7 @@ export function ShowCard({
       onClick={handleClick}
     >
       <div className={styles['cover']}>
-        <img src={images?.[0].url} alt={name} />
+        <Image src={images?.[0]?.url ?? ''} alt={name} />
       </div>
       <div className={styles['name']}>{name}</div>
       <div className={styles['publisher']}>{publisher}</div>

@@ -3,6 +3,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
 import { ReactComponent as DownIcon } from '../../assets/chevron-down.svg';
 import { useUserContext } from '../../contexts';
+import { Image } from '../image';
 import styles from './styles.module.scss';
 
 // The forwardRef is important!!
@@ -42,9 +43,10 @@ export function UserDropdown() {
     <Dropdown>
       <Dropdown.Toggle as={CustomToggle}>
         <div>
-          <img
+          <Image
+            fallbackSrc="./images/avatar-placeholder.png"
             className={styles['avatar']}
-            src={spotifyProfile?.images?.[0].url}
+            src={spotifyProfile?.images?.[0]?.url ?? ''}
             alt={spotifyProfile.display_name}
           />
           <span>{spotifyProfile.display_name}</span>

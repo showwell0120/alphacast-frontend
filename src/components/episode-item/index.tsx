@@ -1,10 +1,9 @@
-import Image from 'react-bootstrap/Image';
-
 import { ReactComponent as PauseIcon } from '../../assets/pause.svg';
 import { ReactComponent as PlayIcon } from '../../assets/play.svg';
 import { usePlayerContext } from '../../contexts';
 import transformDuration from '../../helpers/transformDuration';
 import { FavoriteButton } from '../favorite-button';
+import { Image } from '../image';
 import styles from './styles.module.scss';
 
 interface EpisodeItemProps {
@@ -28,7 +27,7 @@ export function EpisodeItem(props: EpisodeItemProps) {
   return (
     <div className={styles['container']}>
       <div className={styles['cover']}>
-        <Image src={myEpisode?.images?.[0].url} alt={myEpisode.name} />
+        <Image src={myEpisode?.images?.[0].url ?? ''} alt={myEpisode.name} />
       </div>
       <div className={styles['main']}>
         <div className={styles['header']}>
