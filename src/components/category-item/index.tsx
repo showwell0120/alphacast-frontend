@@ -58,7 +58,7 @@ export function CategoryItem({ id, name }: Server.Category) {
   };
 
   const handleAddShow = () => {
-    showModal(modalTypes.Show, {
+    showModal(modalTypes.SearchShow, {
       categoryId: id,
       onSubmit: (success: boolean) => console.log(success),
     });
