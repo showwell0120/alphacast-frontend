@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 /* eslint-disable @typescript-eslint/ban-ts-comment */
@@ -42,7 +44,7 @@ export function EpisodePlayer() {
     return () => {
       destroyPlayer();
     };
-  }, [destroyPlayer]);
+  }, []);
 
   return episode ? (
     <div className={styles['container']}>

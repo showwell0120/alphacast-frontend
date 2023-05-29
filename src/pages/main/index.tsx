@@ -22,6 +22,8 @@ export function Main() {
   const { showModal } = useModalContext();
   const { episode } = usePlayerContext();
 
+  console.log(episode);
+
   const currentCategory = categories.find(c => c.id === currentCategoryId);
 
   const { data, isLoading, isError, error } = useQuery(

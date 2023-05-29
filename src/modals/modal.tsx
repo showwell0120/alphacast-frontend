@@ -31,7 +31,7 @@ export function Modal({
         <BootstrapModal.Title>{title}</BootstrapModal.Title>
       </BootstrapModal.Header>
       <BootstrapModal.Body>{children}</BootstrapModal.Body>
-      {buttonProps?.length && (
+      {buttonProps?.length ? (
         <BootstrapModal.Footer>
           {buttonProps?.map((props, index) => (
             <Button
@@ -43,7 +43,7 @@ export function Modal({
             </Button>
           ))}
         </BootstrapModal.Footer>
-      )}
+      ) : null}
     </BootstrapModal>
   );
 }
