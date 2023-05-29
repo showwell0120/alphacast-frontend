@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useMutation } from '@tanstack/react-query';
 import classNames from 'classnames';
-import { useCallback, useEffect } from 'react';
+import { useEffect } from 'react';
 import Spinner from 'react-bootstrap/Spinner';
 import { useNavigate } from 'react-router-dom';
 
@@ -29,7 +30,7 @@ export function Callback() {
 
   const navigate = useNavigate();
 
-  const _fetchTokenInfo = useMutation({ mutationFn: getTokenInfo });
+  const _fetchTokenInfo = useMutation({ mutationFn: getTokenInfo, retry: 1 });
   const _fetchProfile = useMutation({ mutationFn: getProfile });
   const _fetchUser = useMutation({ mutationFn: initializeUser });
 
@@ -50,53 +51,41 @@ export function Callback() {
     _fetchUser.isSuccess &&
     syncCategoriesMutation?.isSuccess;
 
-  const initializeUserData = useCallback(
-    async (code: string) => {
-      // 取得 spotify token
-      _fetchTokenInfo.mutate(code, {
-        onSuccess: data => {
-          setSpotifyTokenInfo(data);
+  const initializeUserData = async (code: string) => {
+    // 取得 spotify token
+    _fetchTokenInfo.mutate(code, {
+      onSuccess: data => {
+        setSpotifyTokenInfo(data);
 
-          // 將 token 注入 headers
-          injectAuthHeader(spotifyAxios, data.access_token);
+        // 將 token 注入 headers
+        injectAuthHeader(spotifyAxios, data.access_token);
 
-          // 取得 spotify 上的個人 profile
-          _fetchProfile.mutate(undefined, {
-            onSuccess(data) {
-              setSpotifyProfile(data);
-            },
-          });
+        // 取得 spotify 上的個人 profile
+        _fetchProfile.mutate(undefined, {
+          onSuccess(data) {
+            setSpotifyProfile(data);
+          },
+        });
 
-          // 取得使用者資訊
-          _fetchUser.mutate(data.access_token, {
-            onSuccess(data) {
-              const { id, token } = data;
-              setUser({ id, token });
+        // 取得使用者資訊
+        _fetchUser.mutate(data.access_token, {
+          onSuccess(data) {
+            const { id, token } = data;
+            setUser({ id, token });
 
-              data?.favoriteEpisodeIds?.length &&
-                setFavoriteEpisodeIds(data?.favoriteEpisodeIds);
+            data?.favoriteEpisodeIds?.length &&
+              setFavoriteEpisodeIds(data?.favoriteEpisodeIds);
 
-              // 將 token 注入 headers
-              injectAuthHeader(serverAxios, data.token);
+            // 將 token 注入 headers
+            injectAuthHeader(serverAxios, data.token);
 
-              // 取得分類
-              syncCategories();
-            },
-          });
-        },
-      });
-    },
-    [
-      _fetchProfile,
-      _fetchTokenInfo,
-      _fetchUser,
-      setFavoriteEpisodeIds,
-      setSpotifyProfile,
-      setSpotifyTokenInfo,
-      setUser,
-      syncCategories,
-    ]
-  );
+            // 取得分類
+            syncCategories();
+          },
+        });
+      },
+    });
+  };
 
   useEffect(() => {
     let timer: NodeJS.Timer;
@@ -108,13 +97,13 @@ export function Callback() {
     return () => {
       clearTimeout(timer);
     };
-  }, [allSuccess, navigate]);
+  }, [allSuccess]);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const code = params.get('code');
     code && initializeUserData(code);
-  }, [initializeUserData]);
+  }, []);
 
   return (
     <div className={classNames(flexColCenter, styles['container'])}>
