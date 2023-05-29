@@ -42,7 +42,7 @@ export function Main() {
   }
 
   const handleAddShow = () => {
-    showModal(modalTypes.Show, {
+    showModal(modalTypes.SearchShow, {
       categoryId: currentCategoryId,
       onSubmit: (success: boolean) => console.log(success),
     });

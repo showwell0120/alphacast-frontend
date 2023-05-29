@@ -22,7 +22,7 @@ export function EditCategoryName(props: EditCategoryNameProps) {
   };
 
   return (
-    <div className={styles['input-container']}>
+    <div className={'input-container'}>
       <div
         className="position-relative"
         onClick={() => setShowEmojiPicker(preState => !preState)}
