@@ -5,7 +5,7 @@ import { CategoryContext, SyncCategoriesEvents } from '.';
 import { getCategories } from '../../apis/server';
 
 export const CategoryProvider = (props: PropsWithChildren) => {
-  const [categories, setCategories] = useState<Category[]>([]);
+  const [categories, setCategories] = useState<Server.Category[]>([]);
   const [currentCategoryId, setCurrentCategoryId] = useState<string | null>(
     null
   );

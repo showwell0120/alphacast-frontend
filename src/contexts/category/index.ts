@@ -8,7 +8,7 @@ export interface SyncCategoriesEvents {
 export interface CategoryContextProps {
   categories: Server.Category[];
   currentCategoryId: string | null;
-  setCategories: Dispatch<SetStateAction<Category[]>>;
+  setCategories: Dispatch<SetStateAction<Server.Category[]>>;
   setCurrentCategoryId: Dispatch<SetStateAction<string | null>>;
   syncCategories: (events?: SyncCategoriesEvents) => void;
   syncCategoriesMutation: UseMutationResult<

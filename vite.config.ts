@@ -17,4 +17,7 @@ export default defineConfig({
   server: {
     port: 4200,
   },
+  build: {
+    target: ['edge90', 'chrome90', 'firefox90', 'safari15'],
+  },
 });
