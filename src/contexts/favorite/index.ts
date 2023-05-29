@@ -11,3 +11,5 @@ export const FavoriteContext = createContext<FavoriteContextProps>({
 });
 
 export const useFavoriteContext = () => useContext(FavoriteContext);
+
+export { FavoriteProvider } from './provider';

@@ -22,3 +22,5 @@ export const PlayerContext = createContext<PlayerContextProps>({
 });
 
 export const usePlayerContext = () => useContext(PlayerContext);
+
+export { PlayerProvider } from './provider';

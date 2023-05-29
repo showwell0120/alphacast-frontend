@@ -5,12 +5,17 @@ import {
   QueryClientProvider,
 } from '@tanstack/react-query';
 import { AxiosError } from 'axios';
+import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
-import { CategoryProvider, UserProvider } from './contexts';
-import { FavoriteProvider } from './contexts/favorite/provider';
-import { ModalProvider } from './contexts/modal/provider';
-import { PlayerProvider } from './contexts/player/provider';
+import {
+  CategoryProvider,
+  FavoriteProvider,
+  ModalProvider,
+  PlayerProvider,
+  UserProvider,
+} from './contexts';
+import { Callback } from './pages';
 
 // Create a client
 const queryClient = new QueryClient({
@@ -36,7 +41,11 @@ function App() {
           <CategoryProvider>
             <FavoriteProvider>
               <PlayerProvider>
-                <ModalProvider></ModalProvider>
+                <ModalProvider>
+                  <Routes>
+                    <Route path="/callback" element={<Callback />} />
+                  </Routes>
+                </ModalProvider>
               </PlayerProvider>
             </FavoriteProvider>
           </CategoryProvider>

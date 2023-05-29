@@ -24,3 +24,5 @@ export const ModalContext = createContext<ModalContextProps>({
 });
 
 export const useModalContext = () => useContext(ModalContext);
+
+export { ModalProvider } from './provider';
