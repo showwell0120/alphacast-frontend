@@ -1,5 +1,14 @@
 # alphacast-frontend
 
+## Run locally
+
+```bash
+npm install
+npm run dev
+```
+
+Then open `http://localhost:4200`.
+
 ## Project Infrastructure
 
 - [x] Scaffold project template - `vite` (React + TypeScript)
@@ -14,7 +23,7 @@
 
 ## Code tech stacks
 
-- [ ] Routing - `react-router-dom`
-- [ ] Manage server state - `@tantack/react-query`
+- [x] Routing - `react-router-dom`
+- [x] Manage server state - `@tantack/react-query`
 - [x] Http request - `axios`
-- [ ] Design library - `bootstrap` + `react-bootstrap`
+- [x] Design library - `bootstrap` + `react-bootstrap`

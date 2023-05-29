@@ -37,10 +37,11 @@ export function ShowEpisodeList(props: { id: string }) {
   return (
     <div className={styles['episodes']} onScroll={handleScroll}>
       {isFetchingNextPage && <Spinner animation="border" />}
-      {items.length &&
-        items.map(episode => (
-          <EpisodeItem key={episode.id} episode={episode} />
-        ))}
+      {items.length
+        ? items.map(episode => (
+            <EpisodeItem key={episode.id} episode={episode} />
+          ))
+        : null}
     </div>
   );
 }
